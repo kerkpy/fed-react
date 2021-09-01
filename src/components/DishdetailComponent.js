@@ -1,15 +1,11 @@
 import React, { Component } from 'react';
-import { Media } from 'reactstrap';
-
-import { Card, CardImg, CardImgOverlay, CardText, CardBody,
+import { Card, CardImg, CardText, CardBody,
   CardTitle } from 'reactstrap';
 
 class Dishdetail extends Component {
 
   constructor(props) {
       super(props);
-
-
   }
 
   renderDish(dish) {
@@ -39,7 +35,7 @@ class Dishdetail extends Component {
           
             <ul key ={co.id} class="list-unstyled">
             <li>{co.comment}</li>
-            <li>--{co.author}, {co.date}</li>
+            <li>--{co.author}, {new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: '2-digit'}).format(new Date(Date.parse(co.date)))}</li>
             </ul>
             
         );
